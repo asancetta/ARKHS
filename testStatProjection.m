@@ -44,12 +44,6 @@ if nargin <4
                 
 end
 
-% eliminate any zero columns
-indNoZero1    = ~all(features1==0,1);
-indNoZero0    = ~all(features0==0,1);
-features0    = features0(:,indNoZero0);
-features1    = features1(:,indNoZero1);
-
 % include an intercept in null features when projecting the alternative
 % features: comment out this line if needed.
 features0    = [ones(n,1), features0];
